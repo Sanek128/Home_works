@@ -8,13 +8,12 @@
 // -опис дії атрибуту
 // інформацію брати з htmlbook.ru
 
-class Teg{
-    constructor(name, opis, nameAtr1 = '-', opisAtr1 = '-', nameAtr2 = '-', opisAtr2 = '-') {
-        this.name = name;
-        this.opis = opis;
-        this.atribut1 = {name: nameAtr1, opis: opisAtr1};
-        this.atribut2 = {name: nameAtr2, opis: opisAtr2};
-    }
+function Teg (name, opis, nameAtr1 = '-', opisAtr1 = '-', nameAtr2 = '-', opisAtr2 = '-') {
+    this.name = name;
+    this.opis = opis;
+    this.atribut1 = {name: nameAtr1, opis: opisAtr1};
+    this.atribut2 = {name: nameAtr2, opis: opisAtr2};
+    
 }
 
 // Таким чином описати теги
