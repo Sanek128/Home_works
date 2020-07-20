@@ -36,13 +36,13 @@ console.log(numbersX3);
 
 // - создать массив со словами на 15-20 элементов.
 
-let words = ['A', 'Bee', 'Tree', 'Box', 'Igor', 'World', 'Apollo', 'Space', 'Forest', 'Summer', 'Notebook', 'Table', 'Elena', 'Kostik', 'Dollar', 'Dol', 'New', 'Smile'];
+let words = ['A', 'Bee', 'tree', 'box', 'Igor', 'World', 'Apollo', 'space', 'forest', 'Summer', 'notebook', 'table', 'Elena', 'Kostik', 'Dollar', 'dol', 'new', 'smile'];
 console.log(words);
 
 // -- отсортировать его по алфавиту в восходящем порядке.
 
 let wordsUp = words.sort((a, b) => {
-    if (a > b){
+    if (a.toLocaleLowerCase() > b.toLocaleLowerCase()){
         return 1
     }
     return -1
@@ -52,7 +52,7 @@ console.log(wordsUp);
 // -- отсортировать его по алфавиту  в нисходящем порядке.
 
 let wordsDown = words.sort((a, b) => {
-    if (a > b){
+    if (a.toLocaleLowerCase() > b.toLocaleLowerCase){
         return -1
     }
     return 1
@@ -61,7 +61,7 @@ console.log(wordsDown);
 
 // -- отфильтровать слова длиной менее 4х символов
 
-let words4simv = words.filter(value => value.length >= 4);
+let words4simv = words.filter(value => value.length <= 4);
 console.log(words4simv);
 
 // -- перебрать массив при помощи map() и получить новый массив в котором все значения будут со знаком "!" 
@@ -122,7 +122,7 @@ console.log(usersSortId);
 
 // -- наисать функцию калькулятора с 2мя числами и колбеком
 
-function Calculator2(x, y, operator){
+function calculator2(x, y, operator){
     if (operator === '+'){
         console.log(x + y);
     }
@@ -136,14 +136,14 @@ function Calculator2(x, y, operator){
         console.log(x / y);
     }
 }
-Calculator2(3, 6, '+');
-Calculator2(3, 6, '-');
-Calculator2(3, 6, '*');
-Calculator2(3, 6, '/');
+calculator2(3, 6, '+');
+calculator2(3, 6, '-');
+calculator2(3, 6, '*');
+calculator2(3, 6, '/');
 
 // -- наисать функцию калькулятора с 3мя числами и колбеком
 
-function Calculator3(x, y, z, operator1, operator2){
+function calculator3(x, y, z, operator1, operator2){
     if (operator1 === '+'){
         if (operator2 === '+'){
             console.log(x + y + z);
@@ -201,8 +201,8 @@ function Calculator3(x, y, z, operator1, operator2){
         }
     }
 }
-Calculator3(9, 6, 3, '+', '*');
-Calculator3(9, 6, 3, '*', '/');
+calculator3(9, 6, 3, '+', '*');
+calculator3(9, 6, 3, '*', '/');
 
 ///////////////////   CLASS   //////////////////////
 
@@ -372,4 +372,68 @@ console.log(usersStatusFalseAge30);
 
 let usersHomeChetniy = usersWithAddress.filter(value => value.address.number % 2 === 0)
 console.log(usersHomeChetniy);
+
+/////////////////////// DOP ///////////////////////
+
+// Створити обєкт автомобіля з полями:
+// Марка автомобля, потужність двигуна, власник, ціна, рік випуску.
+// Власник автомобіля теж має бути обєкт, у якого є поля
+// Імя, вік, стаж водіння.
+// Створити не менше 7 та не більше 20 машинок.
+
+let car1 = {model: "subaru_wrx", year: 2010, price: 35000, power: 400, driver: {name: 'vasya', age: 31, driverAge: 10}};
+let car2 = {model: "subaru_legacy", year: 2007, price: 25000, power: 250, driver: {name: 'Ivan', age: 28, driverAge: 5}};
+let car3 = {model: "subaru_tribeca", year: 2011, price: 27000, power: 300, driver: {name: 'Illia', age: 44, driverAge: 20}};
+let car4 = {model: "subaru_leone", year: 1998, price: 19000, power: 140, driver: {name: 'Olga', age: 19, driverAge: 1}};
+let car5 = {model: "subaru_impreza", year: 2014, price: 21000, power: 200, driver: {name: 'Tatiana', age: 35, driverAge: 15}};
+let car6 = {model: "subaru_outback", year: 2014, price: 33000, power: 165, driver: {name: 'Viktor', age: 24, driverAge: 5}};
+let car7 = {model: "bmw_115", year: 2013, price: 22000, power: 120, driver: {name: 'Elena', age: 22, driverAge: 3}};
+let car8 = {model: "bmw_315", year: 2010, price: 15000, power: 120, driver: {name: 'Oleg', age: 52, driverAge: 30}};
+let car9 = {model: "bmw_650", year: 2009, price: 11000, power: 350, driver: {name: 'Egor', age: 26, driverAge: 4}};
+let car10 = {model: "bmw_320", year: 2012, price: 16000, power: 180, driver: {name: 'Nikita', age: 29, driverAge: 7}};
+
+// Для початку вкладіть всі наші створені автомобілі в масив cars.
+
+let carsDop = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
+console.log(carsDop);
+
+// Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
+
+for (let i = 0; i < carsDop.length / 2; i++) {
+    carsDop[i].power *= 1.1; 
+    //Math.round(carsDop[i].power);
+}
+
+// На відремонтовані автомобілі найняти нових водіїв (переприсвоїти змінну водій).
+for (let i = 0; i < carsDop.length / 2; i++) {
+    carsDop[i].driver.name = 'New driver ' + (i + 1);
+    carsDop[i].driver.age += 5;
+    carsDop[i].driver.driverAge += 4;
+}
+
+// Далі необхідно рати кожну другу машинку (цикл з кроком в 2), та робити їй підвищення потужності двигуна на 10% та ціну на 5%
+
+// for (let i = 1; i < carsDop.length; i + 2) {
+//     carsDop[i].power *= 1.1; 
+//     carsDop[i].price *= 1.05;
+// }
+
+// Після того зробити перевірку досвіду ВСІХ наших водіїв. Якщо досвід водія менший за 5 років, але його вік більший за 25, 
+// то необідно відправити його на курси підвищення кваліфікації, що збільшить йому досвід на 1 рік.
+
+for (let i = 0; i < carsDop.length ; i++) {
+    if (carsDop[i].driver.driverAge < 5 &&carsDop[i].driver.age > 5){
+        carsDop[i].driver.driverAge += 1;
+        console.log (carsDop[i].driver.name + ' пройшов курси підвищення кваліфікації');
+    }
+}
+
+// Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
+
+let sum = 0;
+for (let i = 0; i < carsDop.length ; i++) {
+    sum = sum + carsDop[i].price;
+}
+console.log('Для придбання всіх цих авто необхідно ' + sum + '$');
+
 
