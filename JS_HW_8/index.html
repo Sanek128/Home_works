@@ -14,7 +14,8 @@
     ------------ Task 2 ------------------
 
         <br>
-        <form action="" id="formTask2">
+
+    <form action="" id="formTask2">
         <textarea name="areaTask2" id="areaTask2" style="width: 100px; height: 100px;"></textarea>
         <br>
         <br>
@@ -33,8 +34,8 @@
         <input type="checkbox" name="check1Task2" id="check1Task2">
         <input type="checkbox" name="check2Task2" id="check2Task2">
         <br>
-        <input type="radio" name="radioTask2" id="radio1Task2">
-        <input type="radio" name="radioTask2" id="radio2Task2">
+        <input type="radio" name="radioTask2" value="1">
+        <input type="radio" name="radioTask2" value="2">
         <br>
         <select name="selectTask2" id="selectTask2">
             <option> </option>
@@ -42,6 +43,106 @@
             <option>Female</option>
         </select>
     </form>
+    <br>
+
+    ------------ Task 3 ------------------
+
+    <br>
+    <form action="" name="formTask3">
+        <input type="button" name="butPrev" value="Prev">
+        <input type="button" name="butNext" value="Next">
+        <br>
+        <textarea name="areaTask3" id="areaTask3" style="width: 100px; height: 100px;"></textarea>
+        <br>
+        <input type="button" name="save" value="Save">
+    </form>
+    <br>
+
+    ------------ Task 4 ------------------
+
+    <br>
+    <div>
+        <h3>Записна книжка</h3>
+        <div id="users">
+
+        </div>
+        <div id="editUser" style="display: none; ">
+            <h4>Редагування картки</h4>
+            <span>ПІБ</span>
+            <input style="margin-left: 98px; background-color: yellowgreen" type="text" id="userEditName">
+            <br>
+            <span>Телефон</span>
+            <input style="margin-left: 66px; background-color: yellowgreen" type="text" id="userEditPhone">
+            <br>
+            <span>Еmale</span>
+            <input style="margin-left: 83px; background-color: yellowgreen" type="text" id="userEditEmail">
+            <br>
+            <span>Фірма</span>
+            <input style="margin-left: 82px; background-color: yellowgreen" type="text" id="useEditFirma">
+            <br>
+            <span>Відділ</span>
+            <input style="margin-left: 80px; background-color: yellowgreen" type="text" id="userEditViddil">
+            <br>
+            <span>Дата народження</span>
+            <input style="margin-left: 6px; background-color: yellowgreen" type="text" id="userEditDate">
+            <input style="margin-left: 70px; background-color: red" type="button" id="userEditSave" value="Save changes">
+
+
+        </div>
+        <br>
+        <br>
+
+    </div>
+    <!-- ФИО, номер, почта, фирма, отдел, день рождения -->
+    <form action="" name="formTask4">
+
+        <span>ПІБ</span>
+        <input style="margin-left: 98px" type="text" id="pib">
+        <br>
+        <br>
+        
+        <span>Телефон</span>
+        <input style="margin-left: 66px" type="text" id="tel">
+        <br>
+        <br>
+
+        <span>Еmale</span>
+        <input style="margin-left: 83px" type="email" id="email">
+        <br>
+        <br>
+
+        <span>Фірма</span>
+        <input style="margin-left: 82px" type="text" id="firma">
+        <br>
+        <br>
+
+        <span>Відділ</span>
+        <input style="margin-left: 80px" type="text" id="viddil">
+        <br>
+        <br>
+
+        <span>Дата народження</span>
+        <input style="margin-left: 6px" type="date" id="date">
+        <input style="margin-left: 70px; background-color: green;" type="button" id="userSave" value="Save">
+
+        <br>
+        <br>
+
+        <!-- <input style="margin-left: 180px" type="button" name="saveUser" value="Save"> -->
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
 
     <script src="scrypt.js"></script>
 </body>
